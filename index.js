@@ -1,11 +1,11 @@
 const readlineSync = require('readline-sync');
 const chalk = require('chalk');
 
-console.log("Think you know me really well? Well then let's find out !!!\n");
+console.log(chalk.bgBlack.yellow.bold("Think you know me really well? Well then let's find out !!!\n"));
 
-const userName = readlineSync.question('Your name? \n');
+const userName = readlineSync.question(chalk.magentaBright('Your name? \n'));
 
-console.log(`\nHey ${userName}. Let's see how much you know me.\n`);
+console.log(chalk.yellowBright(`\nHey ${userName}. Let's see how much you know me.\n`));
 
 // Global variables
 let score = 0;
@@ -65,26 +65,26 @@ for(let i=0; i<quesSet.length; i++){
 }
 
 function validateAnswer(quesNo, ques, ans){
-  const userAns = readlineSync.keyIn(`${quesNo}. ${ques} \n`, {limit: '$<a-c>'});
+  const userAns = readlineSync.keyIn(chalk.cyanBright(`${quesNo}. ${ques} \n`), {limit: '$<a-c>'});
 
   if(userAns === ans){
-    console.log("Bang On! Take your point.\n");
+    console.log(chalk.greenBright("Bang On! Take your point.\n"));
     score+=2;
   }else{
-    console.log("You are Wrong :/\n");
+    console.log(chalk.redBright("You are Wrong :/\n"));
   }
 
-  console.log(`Your current score is ${score}\n`);
+  console.log(chalk.yellowBright(`Your current score is ${score}\n`));
   console.log('--------------------------\n');
 } 
 
 // Print final score
-console.log(`Yay! Your Final Score is ${score}`);
+console.log(chalk.bgBlue(`Yay! Your Final Score is ${score}`));
 console.log('--------------------------\n');
 
-console.log("\n\nLeaderboard Standings\n")
+console.log(chalk.bgBlack.yellow.bold("\n\nLeaderboard Standings\n"));
 for(let i=0; i< leaderBoard.length; i++){
   console.log(`${leaderBoard[i].name} : ${leaderBoard[i].score}`);
 }
 
-console.log("\nDid you beat them ? You could send us a screenshot to be added to our leaderboards.\n")
+console.log(chalk.cyanBright("\nDid you beat them ? You could send us a screenshot to be added to our leaderboards.\n"));
