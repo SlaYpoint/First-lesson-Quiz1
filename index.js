@@ -86,3 +86,5 @@ console.log("\n\nLeaderboard Standings\n")
 for(let i=0; i< leaderBoard.length; i++){
   console.log(`${leaderBoard[i].name} : ${leaderBoard[i].score}`);
 }
+
+console.log("\nDid you beat them ? You could send us a screenshot to be added to our leaderboards.\n")
