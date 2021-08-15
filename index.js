@@ -80,3 +80,9 @@ function validateAnswer(quesNo, ques, ans){
 
 // Print final score
 console.log(`Yay! Your Final Score is ${score}`);
+console.log('--------------------------\n');
+
+console.log("\n\nLeaderboard Standings\n")
+for(let i=0; i< leaderBoard.length; i++){
+  console.log(`${leaderBoard[i].name} : ${leaderBoard[i].score}`);
+}
